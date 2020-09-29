@@ -1,8 +1,9 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-// import { NavigationContainer } from "@react-navigation/native";
+
 import Home from "../screens/home";
 import ReviewDetails from "../screens/reviewDetails";
+import Header from "../shared/header";
 
 const Stack = createStackNavigator();
 
@@ -19,15 +20,19 @@ function HomeStack() {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={{
-          title: "GadgetAn",
+        options={({ navigation }) => {
+          return {
+            headerTitle: () => (
+              <Header navigation={navigation} title="GadgetAn" />
+            ),
+          };
         }}
       />
       <Stack.Screen
         name="ReviewDetails"
         component={ReviewDetails}
         options={{
-          title: "Review Details",
+          headerTitle: "Review Details",
         }}
       />
     </Stack.Navigator>
