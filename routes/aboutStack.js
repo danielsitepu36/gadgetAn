@@ -1,12 +1,11 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 // import { NavigationContainer } from "@react-navigation/native";
-import Home from "../screens/home";
-import ReviewDetails from "../screens/reviewDetails";
+import About from "../screens/about";
 
 const Stack = createStackNavigator();
 
-function HomeStack() {
+function AboutStack() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -17,25 +16,18 @@ function HomeStack() {
       }}
     >
       <Stack.Screen
-        name="Home"
-        component={Home}
+        name="About"
+        component={About}
         options={{
           title: "GadgetAn",
-        }}
-      />
-      <Stack.Screen
-        name="ReviewDetails"
-        component={ReviewDetails}
-        options={{
-          title: "Review Details",
         }}
       />
     </Stack.Navigator>
   );
 }
 
-// export default function HomeNavigator() {
-//   return <NavigationContainer>{HomeStack()}</NavigationContainer>;
+// export default function AboutNavigator() {
+//   return <NavigationContainer>{AboutStack()}</NavigationContainer>;
 // }
 
-export default HomeStack;
+export default AboutStack;
