@@ -8,17 +8,19 @@ const Stack = createStackNavigator();
 
 function HomeStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#ddd",
+        },
+        headerTintColor: "#333",
+      }}
+    >
       <Stack.Screen
         name="Home"
         component={Home}
         options={{
           title: "GadgetAn",
-          headerStyle: {
-            backgroundColor: "#eee",
-            height: 60,
-          },
-          headerTintColor: "222",
         }}
       />
       <Stack.Screen
@@ -26,11 +28,6 @@ function HomeStack() {
         component={ReviewDetails}
         options={{
           title: "Review Details",
-          headerStyle: {
-            backgroundColor: "#eee",
-            height: 60,
-          },
-          headerTintColor: "222",
         }}
       />
     </Stack.Navigator>
