@@ -1,4 +1,5 @@
 import React from "react";
+import { Image, StyleSheet } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import About from "../screens/about";
@@ -13,6 +14,12 @@ function AboutStack() {
         headerStyle: {
           backgroundColor: "#ddd",
         },
+        headerBackground: () => (
+          <Image
+            style={styles.BGImage}
+            source={require("../assets/game_bg.png")}
+          ></Image>
+        ),
         headerTintColor: "#333",
       }}
     >
@@ -31,6 +38,13 @@ function AboutStack() {
   );
 }
 
+const styles = StyleSheet.create({
+  BGImage: {
+    marginTop: 34,
+    width: "100%",
+    height: 50,
+  },
+});
 // export default function AboutNavigator() {
 //   return <NavigationContainer>{AboutStack()}</NavigationContainer>;
 // }
